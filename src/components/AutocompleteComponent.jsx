@@ -91,7 +91,7 @@ function AutocompleteComponent() {
   return (
     <div className='flex h-screen w-screen justify-center items-center bg-[#EEEEEE]'>
       <div className=''>
-        <div className={logo ? 'hidden' : 'border-t-4 border-b-4 border-l-4 border-r w-auto ml-10 p-2 rounded-lg bg-white text-teal-700'}>
+        <div className={logo ? 'hidden' : 'border-t-4 border-b-4 border-l-4 w-auto ml-10 p-2 rounded-lg bg-white text-teal-700'}>
           <Autosuggest
           suggestions={suggestions}
           onSuggestionsFetchRequested={onSuggestionsFetchRequested}

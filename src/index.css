@@ -10,3 +10,9 @@ input:focus {
 .placeholder-style::placeholder {
   color: #fff;
 }
+
+
+* {
+  box-sizing: border-box;
+  font-family: 'Ubuntu Mono', sans-serif;
+}

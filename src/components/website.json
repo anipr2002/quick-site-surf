@@ -1,47 +1,47 @@
 [
     {
         "name": "Google",
-        "url": "https://www.google.com",
-        "colorScheme": ""
+        "url": "https://www.google.com/search?q=",
+        "colorTheme": "#FABB05"
     },
     {
         "name": "Facebook",
-        "url": "https://www.facebook.com",
-        "colorScheme": ""
+        "url": "https://www.facebook.com/search/top/?q=",
+        "colorTheme": ""
     },
     {
         "name": "Twitter",
-        "url": "https://www.twitter.com",
-        "colorScheme": ""
+        "url": "https://www.twitter.com/search?q=",
+        "colorTheme": "#1da1f2"
     },
     {
         "name": "LinkedIn",
-        "url": "https://www.linkedin.com",
-        "colorScheme": ""
+        "url": "https://www.linkedin.com/search/results/all/?keywords=",
+        "colorTheme": "#0077b5"
     },
     {
         "name": "YouTube",
-        "url": "https://www.youtube.com",
-        "colorScheme": ""
+        "url": "https://www.youtube.com/results?search_query=",
+        "colorTheme": "#FF0000"
     },
     {
         "name": "Instagram",
-        "url": "https://www.instagram.com",
-        "colorScheme": ""
+        "url": "https://www.instagram.com/explore/tags/",
+        "colorTheme": "#F70262"
     },
     {
         "name": "Pinterest",
-        "url": "https://www.pinterest.com",
-        "colorScheme": ""
+        "url": "https://www.pinterest.com/search/pins/?q=",
+        "colorTheme": "#b7081b"
     },
     {
         "name": "Twitch",
-        "url": "https://www.twitch.tv",
-        "colorScheme": ""
+        "url": "https://www.twitch.tv/",
+        "colorTheme": "#9670dc"
     },
     {
         "name": "Reddit",
-        "url": "https://www.reddit.com",
-        "colorScheme": ""
+        "url": "https://www.reddit.com/search/?q",
+        "colorTheme": "#F72617"
     }
 ]

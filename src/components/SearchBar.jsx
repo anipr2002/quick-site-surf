@@ -1,10 +1,9 @@
-import React from 'react'
-import {useState} from 'react'
+import React, { useEffect, useState, useRef} from 'react'
 import { IoSearch } from 'react-icons/io5'
 import {MdOutlineKeyboardTab} from 'react-icons/md'
 
 const SearchBar = () => {
-    const [tabPressed, setTabPressed] = useState(true)
+    const [tabPressed, setTabPressed] = useState(false)
 
     const handleKeyDown = (e) => {
         if (e.key === 'Tab') {
@@ -14,7 +13,13 @@ const SearchBar = () => {
             setTabPressed(false)
         }
     }
+   
+    const inputRef = useRef(null)
 
+    useEffect(() => {
+        inputRef.current.focus()
+        // console.log(inputRef.current)
+    }, [tabPressed])
 
   return (
     <div className='w-screen h-screen flex justify-center items-center' name='main-screen-container'> 
@@ -36,6 +41,7 @@ const SearchBar = () => {
                                     className='bg-[#F9FAFA] w-full'
                                     onKeyDown={handleKeyDown}
                                     name='input.1'
+                                    ref={inputRef}
                                     />
                         </div>
 

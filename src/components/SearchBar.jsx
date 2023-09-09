@@ -36,16 +36,12 @@ const SearchBar = () => {
   const handleKeyDown = (e) => {
     if (e.key === "Tab") {
       setTabPressed(true);
-      submitRef.current.click();
     } else if (e.key === "Escape") {
       setTabPressed(false);
-    } else if (e.key === "Enter") {
-      redirectToWebsite();
     }
   };
 
   const inputRef = useRef(null);
-  const submitRef = useRef(null);
 
   useEffect(() => {
     inputRef.current.focus();

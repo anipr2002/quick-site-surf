@@ -19,7 +19,7 @@ const SearchBar = () => {
     useEffect(() => {
         inputRef.current.focus()
         // console.log(inputRef.current)
-    }, [tabPressed])
+    }, [])
 
   return (
     <div className='w-screen h-screen flex justify-center items-center' name='main-screen-container'> 

@@ -7,8 +7,9 @@ const SearchBar = () => {
   const [tabPressed, setTabPressed] = useState(false);
   const [websiteName, setWebsiteName] = useState("");
   const [searchQuery, setSearchQuery] = useState("");
-
   const [colorTheme, setColorTheme] = useState("#8D9093");
+
+  const inputRef = useRef(null);
 
   const getColorTheme = (websiteName) => {
     const website = websiteData.find(
@@ -26,16 +27,18 @@ const SearchBar = () => {
 
   const handleKeyDown = (e) => {
     if (e.key === "Tab") {
-      e.preventDefault();
+      // e.preventDefault();
       getColorTheme(inputRef.current.value);
       setTabPressed(true);
     } else if (e.key === "Escape") {
       setTabPressed(false);
+      setWebsiteName("");
+      setColorTheme("#8D9093");
+      inputRef.current.focus();
     } else if (e.key === "Enter") {
       redirectToWebsite();
     }
   };
-  const inputRef = useRef(null);
 
   useEffect(() => {
     inputRef.current.focus();
@@ -74,7 +77,10 @@ const SearchBar = () => {
       name="main-screen-container"
     >
       <div
-        className={`w-[50rem] h-16 flex items-center bg-[#F9FAFA] rounded-[10px] shadow-[0_0_5px_${colorTheme},0_0_15px_${colorTheme}]`}
+        className="w-[50rem] h-16 flex items-center bg-[#F9FAFA] rounded-[10px] "
+        style={{
+          boxShadow: `0 0 5px ${colorTheme}, 0 0 15px ${colorTheme}`,
+        }}
         name="main-container"
       >
         {!tabPressed && (
@@ -121,8 +127,15 @@ const SearchBar = () => {
               className="flex justify-center items-center w-fit h-full ml-4"
               name="div.2"
             >
-              <div
+              {/* <div
                 className={`h-fit w-fit px-2 rounded-xl bg-[${colorTheme}] shadow-[0_0_5px_${colorTheme},0_0_15px_${colorTheme}] text-white`}
+              > */}
+              <div
+                className="h-fit w-fit px-2 rounded-xl text-white"
+                style={{
+                  backgroundColor: colorTheme,
+                  boxShadow: `0 0 5px ${colorTheme}, 0 0 15px ${colorTheme}`,
+                }}
               >
                 <span className=" first-letter:uppercase">{websiteName}</span>
               </div>

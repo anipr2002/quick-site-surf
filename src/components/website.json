@@ -43,5 +43,20 @@
         "name": "Reddit",
         "url": "https://www.reddit.com/search/?q",
         "colorTheme": "#F72617"
+    },
+    {
+        "name": "Amazon",
+        "url": "https://www.amazon.com/s?k=",
+        "colorTheme": "#ff9600"
+    },
+    {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/",
+        "colorTheme": "#000000"
+    },
+    {
+        "name": "Spotify",
+        "url": "https://open.spotify.com/search/",
+        "colorTheme": "#09d659"
     }
 ]

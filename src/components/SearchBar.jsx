@@ -7,45 +7,38 @@ const SearchBar = () => {
   const [tabPressed, setTabPressed] = useState(false);
   const [websiteName, setWebsiteName] = useState("");
   const [searchQuery, setSearchQuery] = useState("");
-  const [colorTheme, setColorTheme] = useState("#8D9093");
-  const [colorThemebg, setColorThemebg] = useState("");
 
-  //   useEffect(() => {
-  //     console.log("websiteName");
-  //     // var e = new KeyboardEvent("keydown", { keyCode: 32, which: 32 });
-  //   }, [websiteName]);
+  const [colorTheme, setColorTheme] = useState("#8D9093");
+
   const getColorTheme = (websiteName) => {
-    // console.log(websiteName);
     const website = websiteData.find(
       (site) => site.name.toLowerCase() === websiteName.toLowerCase()
     );
-    console.log(website);
 
     if (website) {
-      setColorTheme(`''${website.colorTheme}''`);
-      console.log();
-      console.log("Website found");
+      console.log(website.colorTheme);
+      setColorTheme(website.colorTheme);
     } else {
-      setColorTheme("");
-      console.log("No website found");
+      console.log("Website not found");
+      setColorTheme("#8D9093");
     }
   };
-  //   const colorTheme = "#FF0000";
-  //   const colorThemebg = "[#FF0000]";
 
   const handleKeyDown = (e) => {
     if (e.key === "Tab") {
+      e.preventDefault();
+      getColorTheme(inputRef.current.value);
       setTabPressed(true);
     } else if (e.key === "Escape") {
       setTabPressed(false);
+    } else if (e.key === "Enter") {
+      redirectToWebsite();
     }
   };
-
   const inputRef = useRef(null);
 
   useEffect(() => {
     inputRef.current.focus();
-    // console.log(inputRef.current)
   }, []);
 
   //url handling
@@ -75,9 +68,6 @@ const SearchBar = () => {
     }
   };
 
-  //   console.log(websiteName);
-  //   console.log(colorTheme);
-
   return (
     <div
       className="w-screen h-screen flex justify-center items-center"
@@ -102,12 +92,11 @@ const SearchBar = () => {
                 name="input.1"
                 ref={(input) => {
                   inputRef.current = input;
-                  submitRef.current = input;
                 }}
                 value={websiteName}
                 onChange={(e) => {
                   setWebsiteName(e.target.value);
-                  getColorTheme(e.target.value);
+                  // getColorTheme(e.target.value);
                   console.log(e.target.value);
                 }}
               />
@@ -133,9 +122,9 @@ const SearchBar = () => {
               name="div.2"
             >
               <div
-                className={`h-fit w-fit px-2 rounded-xl bg-${colorThemebg} shadow-[0_0_5px_${colorTheme},0_0_15px_${colorTheme}] text-white`}
+                className={`h-fit w-fit px-2 rounded-xl bg-[${colorTheme}] shadow-[0_0_5px_${colorTheme},0_0_15px_${colorTheme}] text-white`}
               >
-                <span>{websiteName}</span>
+                <span className=" first-letter:uppercase">{websiteName}</span>
               </div>
             </div>
 
